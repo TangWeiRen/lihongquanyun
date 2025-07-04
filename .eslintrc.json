@@ -1,0 +1,46 @@
+{
+  // 环境变量配置
+  "env": {
+    "development": {
+      "API_URL": "http://localhost:3000/api",
+      "DEBUG_MODE": true
+    },
+    "production": {
+      "API_URL": "https://api.example.com",
+      "DEBUG_MODE": false
+    }
+  },
+  
+  // 敏感信息（需避免提交到代码仓库）
+  "secrets": {
+    "database": {
+      "username": "admin",
+      "password": "************",  // 实际应使用环境变量或密钥管理工具
+      "host": "db.example.com"
+    },
+    "thirdParty": {
+      "apiKey": "sk_xxx",          // 第三方服务 API 密钥
+      "clientId": "client_123"
+    }
+  },
+  
+  // 构建配置
+  "build": {
+    "outputPath": "dist",
+    "publicPath": "/static/",
+    "sourceMap": true
+  },
+  
+  // 自定义工具配置
+  "tools": {
+    "webpack": {
+      "alias": {
+        "@components": "./src/components",
+        "@utils": "./src/utils"
+      }
+    },
+    "jest": {
+      "testTimeout": 5000
+    }
+  }
+}
